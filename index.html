@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serena Lee Photography</title>
+<meta name="description" content="Serena Lee is a wedding and portrait photographer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #E7E3DB;
+  --ink: #2A2622;
+  --muted: #5A534B;
+  --rule: #B9B1A4;
+  --tile-a: #D5CEC2;
+  --tile-b: #CDC5B8;
+  --tile-text: #4F4841;
+  --accent: #4A5443;
+  --accent-text: #F4F1EA;
+  --heading: 'Young Serif', Georgia, serif;
+  --body: 'Instrument Sans', system-ui, sans-serif;
+  --gutter: clamp(20px, 6vw, 60px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding-inline: var(--gutter); }
+
+/* Hero */
+.hero {
+  padding-block: clamp(72px, 12vw, 144px) clamp(56px, 8vw, 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+.hero h1 {
+  margin: 0;
+  font-family: var(--heading);
+  font-weight: 400;
+  font-size: clamp(56px, 10vw, 136px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.hero p {
+  margin: 0;
+  max-width: 30ch;
+  font-size: clamp(19px, 2.2vw, 26px);
+  line-height: 1.4;
+  color: var(--muted);
+}
+.cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 16px 32px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 0.2s ease;
+}
+.cta:hover { transform: translateY(-2px); }
+
+/* Portfolio */
+.work { padding-bottom: clamp(80px, 10vw, 140px); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 72px) clamp(24px, 3.4vw, 48px);
+}
+figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+figure img,
+.tile {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+figure img { object-fit: cover; background: var(--tile-a); }
+.tile {
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: var(--tile-text);
+  font-size: 14px;
+  background: var(--tile-a);
+}
+.tile.alt { background: var(--tile-b); }
+figcaption { font-size: 15px; color: var(--muted); }
+
+/* About */
+.about { padding-bottom: clamp(80px, 10vw, 140px); }
+.split { display: flex; gap: clamp(32px, 6vw, 96px); }
+h2 {
+  margin: 0;
+  font-family: var(--heading);
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.about h2 { flex: 0 0 auto; width: min(100%, 340px); }
+.about-text { flex: 1 1 0; min-width: 0; max-width: 60ch; display: flex; flex-direction: column; gap: 20px; }
+.about-text p { margin: 0; }
+
+/* Contact */
+.contact { padding-bottom: clamp(72px, 9vw, 120px); }
+.contact-inner {
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(48px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.contact p { margin: 0; max-width: 44ch; color: var(--muted); }
+.mail {
+  font-family: var(--heading);
+  font-size: clamp(24px, 4vw, 44px);
+  line-height: 1.2;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+.mail:hover { text-decoration-thickness: 4px; }
+
+footer { padding-bottom: 48px; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split { flex-direction: column; }
+}
+@media (max-width: 540px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cta { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="wrap hero">
+  <h1>Serena Lee</h1>
+  <p>I photograph weddings and portraits, close up and unhurried.</p>
+  <a class="cta" href="#contact">Get in touch</a>
+</header>
+
+<main>
+  <section class="wrap work" id="work" aria-label="Portfolio">
+    <div class="grid">
+      <figure>
+        <img src="images/wedding-kiss-bouquet.png" alt="A bride and groom embrace on a white platform by a lake, hiding their faces behind a bouquet of white flowers">
+        <figcaption>Wedding</figcaption>
+      </figure>
+      <figure>
+        <div class="tile alt">Photo 02</div>
+        <figcaption>Portrait</figcaption>
+      </figure>
+      <figure>
+        <div class="tile">Photo 03</div>
+        <figcaption>Wedding</figcaption>
+      </figure>
+      <figure>
+        <div class="tile alt">Photo 04</div>
+        <figcaption>Portrait</figcaption>
+      </figure>
+      <figure>
+        <div class="tile">Photo 05</div>
+        <figcaption>Wedding</figcaption>
+      </figure>
+      <figure>
+        <div class="tile alt">Photo 06</div>
+        <figcaption>Portrait</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap about" id="about">
+    <div class="split">
+      <h2>Hello, I'm Serena.</h2>
+      <div class="about-text">
+        <p>I photograph weddings and portraits, and I try to stay out of the way so people forget I'm there.</p>
+        <p>Most of what I love shooting is the in-between: a held breath before the aisle, a laugh at the wrong moment, two hands that don't know they're being watched.</p>
+        <p>I'd rather give you pictures that look like you than pictures that look posed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contact">
+    <div class="contact-inner">
+      <h2>Let's talk about your day.</h2>
+      <p>Tell me the date, the place and what matters most to you. I'll write back personally.</p>
+      <a class="mail" href="mailto:hello@serenaleephoto.com">hello@serenaleephoto.com</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">© 2026 Serena Lee</footer>
+
+</body>
+</html>
